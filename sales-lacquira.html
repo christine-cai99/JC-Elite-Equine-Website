@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lacquira Z | JC Elite Equine Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="inventory-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="Assets/logo/White%20Background%20copy.jpg" alt="JC Elite Equine Ltd logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sales.html">Sales Horse</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="cta-nav">Schedule a Trial Ride</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section horse-profile">
+      <div class="profile-header">
+        <p class="crumb"><a href="sales.html">&larr; Back to Sales</a></p>
+        <h1>Lacquira Z</h1>
+        <p class="profile-meta">2020 | Mare | 16.1 hh &bull; Sire: Lamborghini Z &bull; Damsire: Quinar Z</p>
+        <p class="profile-meta">Located in Langley, BC &mdash; trials available by appointment</p>
+      </div>
+
+      <div class="horse-feature">
+        <div class="feature-media feature-media--compact">
+          <div class="media-frame">
+            <img src="Assets/Horses/Lacquira%20Z/Portrait.JPG" alt="Lacquira Z cantering under saddle" loading="lazy">
+          </div>
+        </div>
+        <div class="feature-body">
+          <h2>Overview</h2>
+          <p>Lacquira Z is a modern, athletic young mare with the quality and character to develop into a top show jumper. Carefully produced within the JC Elite Equine program since 2024, she combines scope, carefulness, and a generous temperament that make her an exciting investment for a rider aiming at the Young Horse classes and beyond.</p>
+          <p>She made a confident show debut at Thunderbird Show Park in September 2025, stepping into the 0.90m divisions during her first week out and handling the venue with composure well beyond her experience. Brave, intelligent, and naturally forward-thinking, she remains easy to adjust in a simple snaffle with no special prep.</p>
+          <p>At home she continues to build balance and adjustability through pole work, gymnastic lines, and varied conditioning. She hacks quietly and recently enjoyed a trail ride through Campbell Valley Park, demonstrating her steady brain outside the ring. Contact JC Elite Equine Ltd. for the latest schooling videos, flat footage, and full veterinary dossier.</p>
+          <a href="contact.html#contact-top" class="btn btn-primary">Request Trial &amp; Video Package</a>
+        </div>
+      </div>
+
+      <div class="profile-media">
+        <h3>Video Highlights</h3>
+          <p class="profile-note">Recent show rounds highlighting Lacquira Z&rsquo;s composure, adjustability, and scope in the ring.</p>
+        <div class="video-grid">
+          <div class="video-frame">
+            <h4 class="video-title">Thunderbird Show Park &mdash; 0.90m Debut</h4>
+            <iframe src="https://www.youtube.com/embed/zqy5IPZSLTA" title="Lacquira Z schooling" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="video-note">Lacquira Z &ndash; 2025 BCHJA Fall Finale at Thunderbird Show Park | $750 0.90m Open Jumper Classic (R1).</p>
+          </div>
+          <div class="video-frame">
+            <h4 class="video-title">Thunderbird Show Park — 0.85m Open Jumper</h4>
+            <iframe src="https://www.youtube.com/embed/LCWMZg03gU4" title="Lacquira Z jumper classic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="video-note">Lacquira Z &ndash; BCHJA Fall Finale at Thunderbird Show Park | 0.85m Open Jumper</p>
+          </div>
+          <div class="video-frame">
+            <h4 class="video-title">Thunderbird Show Park — 0.85m Open Jumper</h4>
+            <iframe src="https://www.youtube.com/embed/IGarM1QwbmQ" title="Lacquira Z ticketed round" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="video-note">Lacquira Z – BCHJA Fall Finale at Thunderbird Show Park | 0.85m Open Jumper</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> JC Elite Equine Ltd. All rights reserved.</p>
+    <p class="footer-social"><a href="https://instagram.com/jc.elite.equine" target="_blank" rel="noopener">Follow us on Instagram @jc.elite.equine</a></p>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>

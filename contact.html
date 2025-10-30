@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | JC Elite Equine Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="inventory-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="Assets/logo/White%20Background%20copy.jpg" alt="JC Elite Equine Ltd logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sales.html">Sales Horse</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="cta-nav">Schedule a Trial Ride</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section contact" id="contact-top">
+      <div class="section-intro">
+        <p class="eyebrow">Connect with JC Elite Equine</p>
+        <h2>Begin the Conversation</h2>
+        <p class="section-copy section-copy--nowrap">Let&rsquo;s craft a horse acquisition experience tailored to your goals, calendar, and competitive ambitions.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card" id="contact-info">
+          <h3>Connect with JC Elite Equine</h3>
+          <ul class="contact-details">
+            <li><span>Phone</span> <a href="tel:+16048250656">+1 (604) 825-0656</a></li>
+            <li><span>Email</span> <a href="mailto:info@jceliteequine.ca">info@jceliteequine.ca</a></li>
+            <li><span>Location</span> Langley, BC, Canada</li>
+            <li><span>Instagram</span> <a href="https://instagram.com/jc.elite.equine" target="_blank" rel="noopener">jc.elite.equine</a></li>
+          </ul>
+          <p>Trial rides are hosted at top facilities in Langley, with our team coordinating every detail from scheduling to transport.</p>
+        </div>
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xkgpzwrd" method="POST" novalidate>
+          <input type="hidden" name="form-name" value="JC Elite Contact Inquiry">
+          <input type="hidden" name="_subject" value="New inquiry from JC Elite Equine Ltd">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 ( )">
+          </div>
+          <div class="form-group">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your goals or upcoming season."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+          <p class="form-response" id="form-response" role="status" aria-live="polite"></p>
+          <p class="form-note">We respond within one business day. All inquiries are confidential.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> JC Elite Equine Ltd. All rights reserved.</p>
+    <p class="footer-social"><a href="https://instagram.com/jc.elite.equine" target="_blank" rel="noopener">Follow us on Instagram @jc.elite.equine</a></p>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    const form = document.getElementById('contact-form');
+    const responseEl = document.getElementById('form-response');
+
+    if (form) {
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        if (responseEl) {
+          responseEl.textContent = 'Sending...';
+          responseEl.className = 'form-response form-response--pending';
+        }
+
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        try {
+          const res = await fetch(form.getAttribute('action') || 'https://formspree.io/f/xkgpzwrd', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload),
+          });
+
+          if (!res.ok) {
+            throw new Error('Network response was not ok');
+          }
+
+          if (responseEl) {
+            responseEl.textContent = 'Thank you — your message has been sent.';
+            responseEl.className = 'form-response form-response--success';
+          }
+          form.reset();
+        } catch (error) {
+          console.error('Contact form submission failed:', error);
+          if (responseEl) {
+            responseEl.textContent = 'Something went wrong. Please try again or email info@jceliteequine.ca.';
+            responseEl.className = 'form-response form-response--error';
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

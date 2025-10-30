@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sale Horses | JC Elite Equine Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="inventory-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="Assets/logo/White%20Background%20copy.jpg" alt="JC Elite Equine Ltd logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sales.html">Sales Horse</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="cta-nav">Schedule a Trial Ride</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section sales-cards">
+      <div class="gallery-intro">
+        <p class="eyebrow">Available Horses</p>
+        <h1>Current Sales Collection</h1>
+        <p>Select a horse below to explore detailed information, video highlights, and trial availability.</p>
+      </div>
+      <div class="sales-card-grid">
+        <a class="sales-card" href="sales-lacquira.html">
+          <div class="sales-card__image" style="background-image: url('Assets/Horses/Lacquira%20Z/Portrait.JPG');"></div>
+          <div class="sales-card__body">
+            <h2>Lacquira Z</h2>
+            <p class="sales-card__meta">2020 | Mare | 16.1 hh | Show Jumper</p>
+            <p class="sales-card__excerpt">Modern, athletic young mare recently making a confident debut at Thunderbird Show Park. Click to review full profile and videos.</p>
+            <span class="sales-card__cta">View Lacquira&rsquo;s profile &rarr;</span>
+          </div>
+        </a>
+        <a class="sales-card" href="sales-darcana.html">
+          <div class="sales-card__image" style="background-image: url('Assets/Horses/Darcana%20Z/Portrait.PNG'); background-size: cover; background-position: center;"></div>
+          <div class="sales-card__body">
+            <h2>Darcana Z</h2>
+            <p class="sales-card__meta">2020 | Mare | 17.0 hh | Developing Jumper</p>
+            <p class="sales-card__excerpt">Freshly backed mare with natural technique and a kind brain. Click to view development notes and upcoming media.</p>
+            <span class="sales-card__cta">View Darcana&rsquo;s profile &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> JC Elite Equine Ltd. All rights reserved.</p>
+    <p class="footer-social"><a href="https://instagram.com/jc.elite.equine" target="_blank" rel="noopener">Follow us on Instagram @jc.elite.equine</a></p>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>

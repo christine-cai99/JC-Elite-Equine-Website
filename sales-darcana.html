@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darcana Z | JC Elite Equine Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="inventory-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="Assets/logo/White%20Background%20copy.jpg" alt="JC Elite Equine Ltd logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sales.html">Sales Horse</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="cta-nav">Schedule a Trial Ride</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section horse-profile">
+      <div class="profile-header">
+        <p class="crumb"><a href="sales.html">&larr; Back to Sales</a></p>
+        <h1>Darcana Z</h1>
+        <p class="profile-meta">2020 | Mare | Young Jumper Prospect</p>
+        <p class="profile-meta">Located in Langley, BC &mdash; trial rides available by appointment</p>
+      </div>
+
+      <div class="horse-feature">
+        <div class="feature-media feature-media--compact">
+          <div class="media-frame">
+            <img src="Assets/Horses/Darcana%20Z/Portrait.PNG" alt="Darcana Z during flatwork" loading="lazy">
+          </div>
+        </div>
+        <div class="feature-body">
+          <h2>Overview</h2>
+          <p>Darcana Z is a 2020 Zangersheide mare by Darcon vh Kunselhof Z (Darco) and out of Chimana Z. She is a beautifully modern young horse with exceptional breeding, movement, and temperament.</p>
+          <p>Acquired in June 2025 as an unstarted five-year-old, Darcana Z has recently come under saddle and is progressing impressively fast. She shows a naturally rhythmic trot and canter, light balance, and a trainable, intelligent attitude that makes her a joy to develop.</p>
+          <p>This mare has a wonderful mind — sweet, brave, and easy to handle both on the ground and under saddle. She learns quickly and approaches new challenges with quiet confidence.</p>
+          <p class="horse-note">With her strong foundation, excellent pedigree, and willing nature, Darcana Z is offered in the mid to high five figures (CAD). Located in Langley, BC — trial rides available by appointment. Please contact JC Elite Equine Ltd. for inquiries.</p>
+          <a href="contact.html#contact-top" class="btn btn-primary">Request Trial &amp; Video Package</a>
+        </div>
+        <div class="feature-media feature-media--compact">
+          <h3 class="media-title">Free Movement &amp; Free Jump Session</h3>
+          <div class="media-frame media-frame--video">
+            <iframe src="https://www.youtube.com/embed/9I49ULBZEt4" title="Darcana Z free movement and free jump" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> JC Elite Equine Ltd. All rights reserved.</p>
+    <p class="footer-social"><a href="https://instagram.com/jc.elite.equine" target="_blank" rel="noopener">Follow us on Instagram @jc.elite.equine</a></p>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>

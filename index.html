@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JC Elite Equine Ltd | Premier Sport Horse Sales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero" id="home">
+    <div class="overlay"></div>
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="Assets/logo/White%20Background%20copy.jpg" alt="JC Elite Equine Ltd logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sales.html">Sales Horse</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="cta-nav">Schedule a Trial Ride</a>
+    </nav>
+    <div class="hero-body">
+      <div class="hero-content">
+        <p class="eyebrow">JC Elite Equine Ltd</p>
+        <h1>Developing Elite Grand Prix Jumpers from Raw Talent</h1>
+        <p class="hero-copy">From prospect to proven winner, we hand-select horses with the scope, temperament, and elegance required for the top of the sport.</p>
+        <div class="hero-actions">
+          <a href="sales.html" class="btn btn-primary">View Sale Horses</a>
+          <a href="about.html" class="btn btn-outline">Our Story</a>
+        </div>
+      </div>
+      <div class="hero-logo" aria-hidden="true">
+        <img src="Assets/logo/White%20Background%20copy.jpg" alt="">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section home-links">
+      <div class="section-intro">
+        <p class="eyebrow">Discover JC Elite Equine Ltd</p>
+        <h2>For Riders Pursuing Excellence in Show Jumping</h2>
+        <p class="section-copy">Discover how we transform raw prospects into international contenders, preview our current horses, and connect with us to arrange your next trial.</p>
+      </div>
+      <div class="home-links-grid">
+        <article class="home-link-card">
+          <h3>Our Program</h3>
+          <p>Learn how we identify raw talent, develop young jumpers, and create lasting partnerships for the show ring.</p>
+          <a class="card-link" href="about.html">Explore the program &rarr;</a>
+        </article>
+        <article class="home-link-card">
+          <h3>Sale Horses</h3>
+          <p>Review a curated selection of the young prospects and finished Grand Prix horses currently available.</p>
+          <a class="card-link" href="sales.html">View horses &rarr;</a>
+        </article>
+        <article class="home-link-card">
+          <h3>Plan a Trial</h3>
+          <p>Let us tailor an itinerary, coordinate trials, and handle every detail of your next import or acquisition.</p>
+          <a class="card-link" href="contact.html">Start the conversation &rarr;</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> JC Elite Equine Ltd. All rights reserved.</p>
+    <p class="footer-social"><a href="https://instagram.com/jc.elite.equine" target="_blank" rel="noopener">Follow us on Instagram @jc.elite.equine</a></p>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

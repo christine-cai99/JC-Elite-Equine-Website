@@ -1,0 +1,22 @@
+{
+  "name": "jc-elite-equine-site",
+  "version": "1.0.0",
+  "description": "JC Elite Equine Ltd marketing site with contact form backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
+
