@@ -15,13 +15,22 @@
       <a href="index.html" class="logo">
         <img src="Assets/logo/White%20Background%20copy.jpg" alt="JC Elite Equine Ltd logo">
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="sales.html">Sales Horse</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <a href="contact.html" class="cta-nav">Schedule a Trial Ride</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="sales.html">Sales Horse</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="cta-nav cta-nav--mobile">Schedule a Trial Ride</a>
+      </div>
+      <a href="contact.html" class="cta-nav cta-nav--desktop">Schedule a Trial Ride</a>
     </nav>
   </header>
 
@@ -31,21 +40,27 @@
         <div class="lead-copy">
           <p class="eyebrow">About JC Elite Equine</p>
           <h1>Developing Tomorrow&rsquo;s Grand Prix Partners</h1>
-          <p>Founded in September 2024, JC Elite Equine is a new boutique sales program focused on transforming raw, unstarted prospects into composed, competitive jumpers. We keep our roster intentionally small so each horse receives the schooling, conditioning, and exposure needed to reach its potential.</p>
-          <div class="stat-grid">
-            <div class="stat-card">
-              <span class="stat-number">2024</span>
-              <span class="stat-label">Launch year of JC Elite Equine</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">2</span>
-              <span class="stat-label">Sales horses currently in development</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">Growing</span>
-              <span class="stat-label">Network of riders, breeders, and vets</span>
-            </div>
+          <p class="lead-intro">Founded in September 2024, JC Elite Equine blends boutique attention with international reach. We specialise in sourcing raw, high-potential prospects and guiding them through every stage of development until they are confident, competitive partners for the jumper ring.</p>
+          <ul class="lead-points">
+            <li>Hands-on programs designed for long-term soundness and mental confidence.</li>
+            <li>Transparent updates, video, and vet insight shared throughout production.</li>
+            <li>Concierge-level trial coordination for riders travelling nationally or abroad.</li>
+          </ul>
+          <div class="lead-highlights">
+            <article class="lead-highlight">
+              <span class="lead-highlight__number">2024</span>
+              <span class="lead-highlight__label">Program launch year</span>
+            </article>
+            <article class="lead-highlight">
+              <span class="lead-highlight__number">2</span>
+              <span class="lead-highlight__label">Prospects currently in work</span>
+            </article>
+            <article class="lead-highlight">
+              <span class="lead-highlight__number">Global</span>
+              <span class="lead-highlight__label">Network of breeders &amp; riders</span>
+            </article>
           </div>
+          <a href="sales.html" class="btn btn-primary lead-cta">View the Current Horses</a>
         </div>
         <div class="lead-media">
           <div class="horse-carousel" data-horse-carousel>
@@ -189,6 +204,26 @@
     const yearEl = document.getElementById('year');
     if (yearEl) {
       yearEl.textContent = new Date().getFullYear();
+    }
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isExpanded));
+        navMenu.classList.toggle('nav-menu--open', !isExpanded);
+        document.body.classList.toggle('nav-open', !isExpanded);
+      });
+
+      navMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('nav-menu--open');
+          document.body.classList.remove('nav-open');
+        });
+      });
     }
 
     const horseProfiles = [

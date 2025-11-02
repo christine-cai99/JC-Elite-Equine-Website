@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="Assets/logo/White%20Background%20copy.jpg">
 </head>
 <body>
   <header class="inventory-header">
@@ -15,13 +16,22 @@
       <a href="index.html" class="logo">
         <img src="Assets/logo/White%20Background%20copy.jpg" alt="JC Elite Equine Ltd logo">
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="sales.html">Sales Horse</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <a href="contact.html" class="cta-nav">Schedule a Trial Ride</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="sales.html">Sales Horse</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="cta-nav cta-nav--mobile">Schedule a Trial Ride</a>
+      </div>
+      <a href="contact.html" class="cta-nav cta-nav--desktop">Schedule a Trial Ride</a>
     </nav>
   </header>
 
@@ -30,7 +40,7 @@
       <div class="profile-header">
         <p class="crumb"><a href="sales.html">&larr; Back to Sales</a></p>
         <h1>Darcana Z</h1>
-        <p class="profile-meta">2020 | Mare | Young Jumper Prospect</p>
+        <p class="profile-meta">2020 | Mare | 17 hh</p>
         <p class="profile-meta">Located in Langley, BC &mdash; trial rides available by appointment</p>
       </div>
 
@@ -68,6 +78,26 @@
     const yearEl = document.getElementById('year');
     if (yearEl) {
       yearEl.textContent = new Date().getFullYear();
+    }
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isExpanded));
+        navMenu.classList.toggle('nav-menu--open', !isExpanded);
+        document.body.classList.toggle('nav-open', !isExpanded);
+      });
+
+      navMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('nav-menu--open');
+          document.body.classList.remove('nav-open');
+        });
+      });
     }
   </script>
 </body>
