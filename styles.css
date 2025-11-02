@@ -1137,6 +1137,42 @@ header.hero {
   color: var(--color-accent);
 }
 
+.feature-media--compact {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.feature-media--compact .media-block {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.4rem 1.2rem 1.8rem;
+  background: rgba(8, 20, 28, 0.72);
+  border: 1px solid rgba(213, 170, 79, 0.18);
+  border-radius: 1.2rem;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.28);
+}
+
+.feature-media--compact .media-title {
+  margin: 0;
+  position: relative;
+}
+
+.feature-media--compact .media-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  background: rgba(213, 170, 79, 0.75);
+  margin: 0.65rem auto 0;
+}
+
+.feature-media--compact .media-block .media-frame {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
 .horse-profile {
   background: var(--color-background-alt);
 }
